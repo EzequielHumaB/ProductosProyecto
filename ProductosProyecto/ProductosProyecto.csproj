@@ -89,9 +89,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
-    <Folder Include="DAL\" />
     <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Registros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Productos.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
