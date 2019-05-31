@@ -5,12 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using ProductosProyecto.Entidades;
+using ProductosProyecto.BLL;
 
 namespace ProductosProyecto.DAL
 {
-   public class Contexto
+   public class Contexto : DbContext
     {
-       DbSet<Productos> productos { get; set; }
+        public DbSet<Productos> producto { get; set; }
+        
+
+        public Contexto() : base("ConStr")
+        { }
 
     }
 }
