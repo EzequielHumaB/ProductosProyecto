@@ -29,6 +29,23 @@ namespace ProductosProyecto.BLL
             return paso;
         }
       
-
+        public static bool Modificar (Productos productos)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                contexto.Entry(productos).State = System.Data.Entity.EntityState.Modified;
+                paso = contexto.SaveChanges() > 0;
+            } catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
     }
 }
