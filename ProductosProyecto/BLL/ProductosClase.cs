@@ -47,5 +47,47 @@ namespace ProductosProyecto.BLL
             }
             return paso;
         }
+
+        public static bool Eliminar(int id)
+        {
+            bool paso = false;
+            Contexto contexto = new Contexto();
+            try
+            {
+                var eliminar = contexto.producto.Find(id);
+                contexto.Entry(id).State = System.Data.Entity.EntityState.Deleted;
+                paso = contexto.SaveChanges() > 0;
+
+            }catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return paso;
+        }
+
+        public static Productos Buscar(int id)
+        {
+            Productos productos = new Productos();
+            Contexto contexto = new Contexto();
+            try
+            {
+                productos = contexto.producto.Find(id);
+
+            }catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return productos;
+        }
+
+       
     }
 }
