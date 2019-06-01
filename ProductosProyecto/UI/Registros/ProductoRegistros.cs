@@ -7,23 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProductosProyecto.UI.Registros;
 
-
-namespace ProductosProyecto
+namespace ProductosProyecto.UI.Registros
 {
-    public partial class Form1 : Form
+    public partial class ProductoRegistros : Form
     {
-        public Form1()
+        public ProductoRegistros()
         {
             InitializeComponent();
         }
 
         private void RegistrarProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProductoRegistros productoRegistros = new ProductoRegistros();
-            productoRegistros.StartPosition = FormStartPosition.CenterScreen;
-            productoRegistros.Show();
+
         }
     }
 }

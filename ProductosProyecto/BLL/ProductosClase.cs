@@ -88,6 +88,25 @@ namespace ProductosProyecto.BLL
             return productos;
         }
 
+        public static List<Productos> GetList(Expression<Func<Productos,bool>>productos)
+        {
+            List<Productos> productos1 = new List<Productos>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                productos1 = contexto.producto.Where(productos).ToList();
+
+            }catch(Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return productos1;
+        }
+
        
     }
 }
